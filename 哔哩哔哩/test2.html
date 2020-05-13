@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例</title>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <h2 v-text="info">hah</h2>
+  <p>{{ message +"23"}}</p>
+  <p v-html="content">66</p>
+  <input type="button" value="v-on指令" v-on:click="doIt">
+  <input type="button" value="v-on指令" @dblclick="doIt">
+  <h2 @click="changeFood">{{food}}</h2>
+  <div class="input-num">
+    <button @click="sub">-</button>
+    <span>{{num}}</span>
+    <button @click="add">+</button>
+</div>
+<img src="1.jpg" alt="" v-show="isshow">
+<p>操作DOM树</p>
+<img src="1.jpg" alt="" v-if="isshow=true">
+<img v-bind:src="imgsrc" v-bind:title="imgtitle" v-bind:class="isActive" alt="">
+<ul>
+    <li v-for="(item,index) in arr">你好+{{index}}+{{item}}</li>
+</ul>
+<input type="button" value="tianjia" @click="addveg">
+<ul>
+    <li v-for="(item,index) in vegetables">你好+{{index}}+{{item}}</li>
+</ul>
+<input type="button" value="点击" @click="doit(333,'LAO')">
+<input type="text"  @keyup.enter="doIt">
+<input type="text" v-model="message">
+<h2>{{message}}</h2>
+</div>
+
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!',
+    info:"shibohao",
+    content:"<p>2035</p>",
+    food:"西兰花",
+    num:1,
+    isshow:true,
+    imgsrc:"1.jpg",
+    imgtitle:"xiaoshi",
+    isActive:true,
+    arr:["1","2","3","5"],
+    vegetables:[
+        {name:"xaisoho"},
+        {name:"ops"}
+    ]
+  },
+  methods:{
+        doIt:function(){
+            alert("haha");
+        },
+        changeFood:function(){
+            this.food+="好吃！";
+            
+        },
+        add:function(){
+           this.num++;
+        },
+        addveg:function(){
+            this.vegetables.push({name:"plkj"});
+        },
+        sub:function(){
+            if(this.num>0){
+                this.num--;
+            }
+        },
+        doit:function(p1,p2){
+            console.log(p1);
+            console.log(p2);
+        }
+    }
+})
+
+</script>
+</body>
+</html>

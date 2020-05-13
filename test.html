@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例</title>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  {{a}}--{{b}}
+</div>
+
+<script>
+var data={a:1}
+var vm=new Vue({
+  el: '#app',
+  data: data
+});
+
+data.a="hi......new.......";
+data.b="test";
+//vm.$data
+vm.$watch('a',function(newval,oldval){
+console.log(newval,oldval);
+})
+vm.$data.a="test11111"
+</script>
+</body>
+</html>

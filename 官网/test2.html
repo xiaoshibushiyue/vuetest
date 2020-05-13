@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例</title>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+ {{msg}}
+</div>
+<script>
+
+var vm=new Vue({
+  el: '#app',
+  data:{
+    msg:"hi vue"
+  },
+  
+  beforeCreate:function(){
+      console.log("beforecreate");
+  },
+  created:function(){
+      console.log("created");
+  },
+  beforeMount:function(){
+      console.log("beforemount");
+  },
+  mounted:function(){
+      console.log("mounted");
+  },
+  beforeUpdate:function(){
+      console.log("beforeupdate");
+  },
+  Updated:function(){
+      console.log("update");
+  }
+
+});
+setTimeout(function(){
+    vm.msg="change.........";
+},3000);
+</script>
+</body>
+</html>

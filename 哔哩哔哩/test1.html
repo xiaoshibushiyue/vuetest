@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例</title>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <p>{{ message }}</p>
+  <h2>{{school.name}}</h2>
+  <ul>
+      <li>{{campus[0]}}</li>
+      <li>{{campus[1]}}</li>
+  </ul>
+</div>
+
+<script>
+new Vue({
+   el:'#app',
+   data:{
+       message:"hahha",
+       school:{
+           name:"xiaoshi",
+           mobile:"1235415"
+       },
+       campus:["北京","天津"]
+
+   }
+  })
+</script>
+</body>
+</html>
