@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <!--这个head和body的做用，还有是不是有个footer-->
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程测试一</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{message}}</p>
+</div>
+<span id="app1">{{message1}}</span>
+<script>
+    new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue.js!'
+      }
+    })
+    new Vue({
+        el:'#app1',
+        data:{
+            message1:'xiaoshibushiyue'
+        }
+    })
+</script>
+
+</body>
+
+</html>
